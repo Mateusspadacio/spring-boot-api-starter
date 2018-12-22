@@ -10,7 +10,7 @@ import com.br.project.domain.User;
 import com.br.project.repositories.UserRepository;
 
 @SpringBootApplication
-public class CursomcApplication implements CommandLineRunner{
+public class WebApplication implements CommandLineRunner{
 	
 	@Autowired
 	private UserRepository rep;
@@ -19,7 +19,7 @@ public class CursomcApplication implements CommandLineRunner{
 	private BCryptPasswordEncoder pe;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(CursomcApplication.class, args);
+		SpringApplication.run(WebApplication.class, args);
 		
 	}
 

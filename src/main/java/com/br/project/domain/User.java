@@ -14,7 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.br.project.domain.enums.Perfil;
+import com.br.project.domain.enums.Profile;
 
 @Entity
 public class User implements Serializable{
@@ -67,11 +67,11 @@ public class User implements Serializable{
 		this.senha = senha;
 	}
 	
-	public Set<Perfil> getPerfis() {
-		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
+	public Set<Profile> getPerfis() {
+		return perfis.stream().map(x -> Profile.toEnum(x)).collect(Collectors.toSet());
 	}
 	
-	public void addPerfil(Perfil perfil) {
+	public void addPerfil(Profile perfil) {
 		perfis.add(perfil.getCod());
 	}
 

@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.br.project.domain.enums.Perfil;
+import com.br.project.domain.enums.Profile;
 
 public class UserSS implements UserDetails{
 	
@@ -23,7 +23,7 @@ public class UserSS implements UserDetails{
 	public UserSS() {
 	}
 	
-	public UserSS(Integer id, String email, String senha, Set<Perfil> perfis) {
+	public UserSS(Integer id, String email, String senha, Set<Profile> perfis) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -70,7 +70,7 @@ public class UserSS implements UserDetails{
 		return true;
 	}
 	
-	public boolean hasRole(Perfil perfil) {
+	public boolean hasRole(Profile perfil) {
 		return getAuthorities().contains(new SimpleGrantedAuthority(perfil.getDescricao()));
 	}
 
